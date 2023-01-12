@@ -1,0 +1,12 @@
+<div class="drag-drop-container">
+    <div class="pending">
+        <h3> Lessons To Watch</h3>
+        <div cdkDropList class="lessons-list"
+            (cdkDropListDropped)="drop($event)">
+            
+            <div class="lesson" *ngFor="let lesson of lessons" cdkDrag>
+                {{lesson.description}}
+            </div>
+        </div>
+    </div>
+</div>
