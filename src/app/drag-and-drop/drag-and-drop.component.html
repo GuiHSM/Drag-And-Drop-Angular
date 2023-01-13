@@ -6,15 +6,21 @@
         display="inline"
         id={{i.toString()}}
         cdkDropList
+        class="lesson-list"
         [cdkDropListData]="lessons[i]"
-        class="example-list"
         (cdkDropListDropped)="drop($event)">
         <div
             class="example-box"
             *ngFor="let lesson of lessons[i]"
+            class="lesson"
             [cdkDragData]="lesson"
             cdkDrag>{{lesson}}</div>
         </div>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
     </div>
   </div>
 </div>

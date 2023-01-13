@@ -18,7 +18,7 @@ export class DragAndDropComponent {
   [
       'Navigation and Containers',
     ]];
-  colunas = [...Array(3).keys()]
+  colunas = [...Array(4).keys()]
   get(val:number){
     if(val==0){
       return 2;
