@@ -10,14 +10,34 @@ import { ILesson } from '../interfaces/ILesson';
 
 export class DragAndDropComponent {
   lessons = [[
-      'Introduction to Angular Material',
-      'Data tables',
+    {
+      id: 120,
+      'description': 'Introduction to Angular Material',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },{
+      id: 122,
+      'description': 'Data tables',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },
   ],[
-      'Data tables',
-    ],
-  [
-      'Navigation and Containers',
-    ]];
+    {
+      id: 122,
+      'description': 'Data tables',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },],
+  [{
+      id: 121,
+      'description': 'Navigation and Containers',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },]];
   colunas = [...Array(4).keys()]
   get(val:number){
     if(val==0){
@@ -25,7 +45,7 @@ export class DragAndDropComponent {
     }
     return val-1;
   }
-  drop(event: CdkDragDrop<string[]>){
+  drop(event: CdkDragDrop<ILesson[]>){
     console.log(event.previousContainer.id);
     console.log(event.container.id);
     if (event.previousContainer === event.container) {
