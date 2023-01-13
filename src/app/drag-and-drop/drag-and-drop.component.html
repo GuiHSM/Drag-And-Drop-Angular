@@ -1,12 +1,35 @@
-<div class="drag-drop-container">
-    <div class="pending">
-        <h3> Lessons To Watch</h3>
-        <div cdkDropList class="lessons-list"
-            (cdkDropListDropped)="drop($event)">
-            
-            <div class="lesson" *ngFor="let lesson of lessons" cdkDrag>
-                {{lesson.description}}
-            </div>
-        </div>
+<div class="example-container">
+    <h2>Available numbers</h2>
+  
+    <div
+      id="all"
+      cdkDropList
+      [cdkDropListData]="lessons[0]"
+      cdkDropListConnectedTo="even"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div
+        class="example-box"
+        *ngFor="let lesson of lessons[0]"
+        [cdkDragData]="lesson"
+        cdkDrag>{{lesson.description}}</div>
     </div>
-</div>
+  </div>
+  
+  <div class="example-container">
+    <h2>Even numbers</h2>
+  
+    <div
+      id="even"
+      cdkDropList
+      [cdkDropListData]="lessons[1]"
+      cdkDropListConnectedTo="all"
+      class="example-list"
+      (cdkDropListDropped)="drop($event)">
+      <div
+        class="example-box"
+        *ngFor="let lesson of lessons[1]"
+        cdkDrag
+        [cdkDragData]="lesson">{{lesson.description}}</div>
+    </div>
+  </div>

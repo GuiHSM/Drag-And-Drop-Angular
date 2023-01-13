@@ -1,4 +1,4 @@
-import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component } from '@angular/core';
 import { ILesson } from '../interfaces/ILesson';
 
@@ -9,7 +9,7 @@ import { ILesson } from '../interfaces/ILesson';
 })
 
 export class DragAndDropComponent {
-  lessons = [
+  lessons = [[
     {
       id: 120,
       'description': 'Introduction to Angular Material',
@@ -24,18 +24,26 @@ export class DragAndDropComponent {
       'segNo': 1,
       courseId: 11
     },
+  ],[
     {
       id: 122,
       'description': 'Data tables',
       'duration': '4.17',
       'segNo': 1,
       courseId: 11
-    },
-  ];
+    },]];
   drop(event: CdkDragDrop<ILesson[]>){
-    console.log(event.previousIndex);
-    console.log(event.currentIndex);
-
-    moveItemInArray(this.lessons, event.previousIndex,event.currentIndex);
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      console.log(event.previousContainer.data);
+      console.log(event.container.data);
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 }
