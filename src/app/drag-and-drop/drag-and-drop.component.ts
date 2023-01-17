@@ -55,7 +55,7 @@ export class Campanha {
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
+    } else if (event.container.data.length<3){
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,
