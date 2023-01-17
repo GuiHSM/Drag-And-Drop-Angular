@@ -1,5 +1,5 @@
-import { CdkDrag, CdkDropList, CdkDropListGroup, CdkDragStart, CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component, NgModule, ViewChild } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { Component} from '@angular/core';
 import { ILesson } from '../interfaces/ILesson';
 
 
@@ -9,11 +9,21 @@ import { ILesson } from '../interfaces/ILesson';
   styleUrls: ['./drag-and-drop.component.css']
 }) */
 
+// Função para gerar automaticamente a lista de medicamentos
+function estoqueLista() {
+  var estoque = [];
+  for (let index = 1; index <= 50; index++) {
+    var listaMed = "Medicamento " + [index];
+    estoque.push(listaMed)
+ }
+ return estoque;
+}
 
 /**
  * @title Drag&Drop connected sorting
  */
 @Component({
+  //COMPONENTES UTILIZADOS PELO GUILHERME
   /* selector: 'cdk-drag-drop-connected-sorting-example',
   templateUrl: 'cdk-drag-drop-connected-sorting-example.html',
   styleUrls: ['cdk-drag-drop-connected-sorting-example.css'], */
@@ -21,26 +31,25 @@ import { ILesson } from '../interfaces/ILesson';
   templateUrl: './drag-and-drop.component.html',
   styleUrls: ['./drag-and-drop.component.css']
 })
-export class Campanha {
-  estoque = ['Medicamento 1','Medicamento 2','Medicamento 3','Medicamento 4','Medicamento 5','Medicamento 6','Medicamento 7','Medicamento 8','Medicamento 9','Medicamento 10','Medicamento 11','Medicamento 12'];
 
-  prateleira = [''];
-  prateleira11 = [''];
-  prateleira12 = [''];
-  prateleira13 = [''];
-  prateleira14 = [''];
-  prateleira21 = [''];
-  prateleira22 = [''];
-  prateleira23 = [''];
-  prateleira24 = [''];
-  prateleira31 = [''];
-  prateleira32 = [''];
-  prateleira33 = [''];
-  prateleira34 = [''];
-  prateleira41 = [''];
-  prateleira42 = [''];
-  prateleira43 = [''];
-  prateleira44 = [''];
+export class Campanha {
+  estoque = estoqueLista();
+  prateleira11: string[] = [];
+  prateleira12: string[] = [];
+  prateleira13: string[] = [];
+  prateleira14: string[] = [];
+  prateleira21: string[] = [];
+  prateleira22: string[] = [];
+  prateleira23: string[] = [];
+  prateleira24: string[] = [];
+  prateleira31: string[] = [];
+  prateleira32: string[] = [];
+  prateleira33: string[] = [];
+  prateleira34: string[] = [];
+  prateleira41: string[] = [];
+  prateleira42: string[] = [];
+  prateleira43: string[] = [];
+  prateleira44: string[] = [];
 
 
   drop(event: CdkDragDrop<string[]>) {
@@ -56,7 +65,7 @@ export class Campanha {
     }
   }
 }
-
+//CSS DO CÓDIGO ORIGINAL DO GUILHERME
 /* 
 export class DragAndDropComponent {
   lessons1 = [[
@@ -174,7 +183,4 @@ export class DragAndDropComponent {
   activeItems = ['Item 4'];
   doneItems = ['Item 5', 'Item 6', 'Item 7'];
 }
-
-
-
  */
