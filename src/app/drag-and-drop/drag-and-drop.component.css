@@ -1,3 +1,7 @@
+/* .div {
+  display: flex !important;
+}
+ */
 /* CSS sombra ao posicionar o item ao arrastar */
 .cdk-drag-placeholder {
   opacity: .3;
@@ -27,12 +31,21 @@
 
 .prateleira {
   margin-left: 100px;
+} 
+ 
+.prateleira-nichos {
+  padding-left: 80px;
 }
 
-.estoque {
+.paginacao {
   margin: 0;
+  padding-left: 65px;
+  padding-top: 10px;
 }
 
+.campanha-estoque {
+  padding-left: 150px;
+}
 /* CSS responsável pelos itens da Prateleira */
 .prateleira-list {
   width: 150px;
@@ -62,6 +75,10 @@
   border: solid 1px #ccc;
   justify-content: space-between;
   align-content: center;
+}
+
+.btnSalvar {
+  padding-right: 55px;
 }
 
 /*  CSS ORIGINAL GUILHERME */

@@ -19,6 +19,8 @@ function estoqueLista() {
  return estoque;
 }
 
+
+
 /**
  * @title Drag&Drop connected sorting
  */
@@ -50,12 +52,14 @@ export class Campanha {
   prateleira42: string[] = [];
   prateleira43: string[] = [];
   prateleira44: string[] = [];
+  paginaAtual: number = 1;
+  contador: number = 13;
 
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else if (event.container.data.length<3){
+    } else if (event.container.data.length<4){
       transferArrayItem(
         event.previousContainer.data,
         event.container.data,

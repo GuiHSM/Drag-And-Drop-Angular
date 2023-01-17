@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 // import { DragAndDropComponent } from './drag-and-drop/drag-and-drop.component';
 import { Campanha } from './drag-and-drop/drag-and-drop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RoutingModule,
     BrowserAnimationsModule,
     MatListModule,
-    DragDropModule
+    DragDropModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
