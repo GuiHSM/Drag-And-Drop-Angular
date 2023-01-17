@@ -1,51 +1,171 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 import { ILesson } from '../interfaces/ILesson';
 
+
+/* @Component({
+  selector: 'app-drag-and-drop',
+  templateUrl: './drag-and-drop.component.html',
+  styleUrls: ['./drag-and-drop.component.css']
+}) */
+
+// Função para gerar automaticamente a lista de medicamentos
+function estoqueLista() {
+  var estoque = [];
+  for (let index = 1; index <= 50; index++) {
+    var listaMed = "Medicamento " + [index];
+    estoque.push(listaMed)
+ }
+ return estoque;
+}
+
+/**
+ * @title Drag&Drop connected sorting
+ */
 @Component({
+  //COMPONENTES UTILIZADOS PELO GUILHERME
+  /* selector: 'cdk-drag-drop-connected-sorting-example',
+  templateUrl: 'cdk-drag-drop-connected-sorting-example.html',
+  styleUrls: ['cdk-drag-drop-connected-sorting-example.css'], */
   selector: 'app-drag-and-drop',
   templateUrl: './drag-and-drop.component.html',
   styleUrls: ['./drag-and-drop.component.css']
 })
 
+export class Campanha {
+  estoque = estoqueLista();
+  prateleira11: string[] = [];
+  prateleira12: string[] = [];
+  prateleira13: string[] = [];
+  prateleira14: string[] = [];
+  prateleira21: string[] = [];
+  prateleira22: string[] = [];
+  prateleira23: string[] = [];
+  prateleira24: string[] = [];
+  prateleira31: string[] = [];
+  prateleira32: string[] = [];
+  prateleira33: string[] = [];
+  prateleira34: string[] = [];
+  prateleira41: string[] = [];
+  prateleira42: string[] = [];
+  prateleira43: string[] = [];
+  prateleira44: string[] = [];
+
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
+  }
+}
+//CSS DO CÓDIGO ORIGINAL DO GUILHERME
+/* 
 export class DragAndDropComponent {
-  lessons = [[
+  lessons1 = [[
     {
       id: 120,
-      'description': 'Introduction to Angular Material',
+      'description': 'Item 1',
       'duration': '4.17',
       'segNo': 1,
       courseId: 11
-    },{
+    }, {
       id: 122,
-      'description': 'Data tables',
+      'description': 'Item 2',
       'duration': '4.17',
       'segNo': 1,
       courseId: 11
     },
-  ],[
+  ], [
     {
       id: 122,
-      'description': 'Data tables',
+      'description': 'Item 3',
       'duration': '4.17',
       'segNo': 1,
       courseId: 11
     },],
   [{
-      id: 121,
-      'description': 'Navigation and Containers',
+    id: 123,
+    'description': 'Item 4',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },], [{
+    id: 124,
+    'description': 'Item 5',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },], [{
+    id: 125,
+    'description': 'Item 6',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },]]
+  lessons2 = [[
+    {
+      id: 120,
+      'description': 'Item 7',
       'duration': '4.17',
       'segNo': 1,
       courseId: 11
-    },]];
-  colunas = [...Array(4).keys()]
-  get(val:number){
-    if(val==0){
+    }, {
+      id: 122,
+      'description': 'Item 8',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },
+  ], [
+    {
+      id: 122,
+      'description': 'Item 9',
+      'duration': '4.17',
+      'segNo': 1,
+      courseId: 11
+    },],
+  [{
+    id: 123,
+    'description': 'Item 10',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },], [{
+    id: 124,
+    'description': 'Item 11',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },], [{
+    id: 125,
+    'description': 'Item 12',
+    'duration': '4.17',
+    'segNo': 1,
+    courseId: 11
+  },]]
+    ;
+  colunas1 = [...Array(this.lessons1.length).keys()]//0,1,2,3
+  get1(val: number) {
+    if (val == 0) {
       return 2;
     }
-    return val-1;
+    return val - 1;
   }
-  drop(event: CdkDragDrop<ILesson[]>){
+  colunas2 = [...Array(this.lessons2.length).keys()]//0,1,2,3
+  get2(val: number) {
+    if (val == 0) {
+      return 2;
+    }
+    return val - 1;
+  }
+  drop(event: CdkDragDrop<ILesson[]>) {
     console.log(event.previousContainer.id);
     console.log(event.container.id);
     if (event.previousContainer === event.container) {
@@ -59,4 +179,8 @@ export class DragAndDropComponent {
       );
     }
   }
+  newItems = ['Item 0', 'Item 1', 'Item 2', 'Item 3'];
+  activeItems = ['Item 4'];
+  doneItems = ['Item 5', 'Item 6', 'Item 7'];
 }
+ */

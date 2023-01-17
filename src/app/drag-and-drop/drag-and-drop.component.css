@@ -1,4 +1,71 @@
-.drag-drop-containet {
+/* CSS sombra ao posicionar o item ao arrastar */
+.cdk-drag-placeholder {
+  opacity: .3;
+}
+
+/* CSS Animação suavidade do movimento */
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* CSS responsável pela lista do estoque */
+.estoque-lista {
+  width: 150px;
+  height: 50px;
+  padding: 20px 10px;
+  margin: 4px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+}
+
+.prateleira {
+  margin-left: 100px;
+}
+
+.estoque {
+  margin: 0;
+}
+
+/* CSS responsável pelos itens da Prateleira */
+.prateleira-list {
+  width: 150px;
+  height: 50px;
+  padding: 20px 10px;
+  margin: 2px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  background: white;
+  font-size: 14px;
+}
+
+/* CSS responsável pela prateleira */
+.campanha-prateleira {
+  list-style-type: none;
+  width: 200px;
+  height: 230px;
+  margin: 4px;
+  padding-top: 5px;
+  padding-left: 20px;
+  align-items: center;
+  border: solid 1px #ccc;
+  justify-content: space-between;
+  align-content: center;
+}
+
+/*  CSS ORIGINAL GUILHERME */
+/* .drag-drop-containet {
     font-family: "Roboto";
     display: flex;
     justify-content: center;
@@ -9,7 +76,7 @@
     max-width: 100%;
     border: solid 1px #ccc;
     min-height: 60px;
-    display: block;
+    display: flex;
     background: white;
     border-radius: 4px;
     overflow: hidden;
@@ -31,4 +98,4 @@
 
 .done{
     margin-left: 30px;
-}
+} */
